@@ -1,0 +1,33 @@
+// This is a temporary file to fix the handleViewStokvelaDetails function
+// The issue is that the function is defined at the end of the file but used earlier
+// We need to move the function definition to the top of the component
+
+// The function should be defined like this:
+const handleViewStokvelaDetails = async (stokvela: any) => {
+  try {
+    setIsLoadingMembers(true);
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session?.user) return;
+
+    // Get all members of this stokvela group
+    const { data: members, error } = await supabase
+      .from('stokvela_members')
+      .select('*')
+      .eq('group_id', stokvela.id);
+
+    if (error) throw error;
+    
+    setSelectedStokvela(stokvela);
+    setStokvelaMembers(members || []);
+    setIsStokvelaDetailsOpen(true);
+  } catch (error) {
+    console.error('Error fetching stokvela members:', error);
+    toast({
+      title: "Error",
+      description: "Failed to fetch stokvela members. Please try again.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsLoadingMembers(false);
+  }
+}; 
