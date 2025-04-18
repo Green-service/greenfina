@@ -64,4 +64,4 @@ export async function GET(request: NextRequest) {
       new URL(`/login?error=${encodeURIComponent(error?.message || "Authentication failed")}`, request.url),
     )
   }
-}
+} 
