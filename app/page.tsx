@@ -14,9 +14,11 @@ import { motion } from "framer-motion"
 import { RegistrationModal } from "@/components/ui/registration-modal"
 import { AnimatedBackgroundLogo } from "@/components/ui/animated-background-logo"
 import { WorldMapDemo } from "@/components/landing/world-map-demo"
+import { AuthModal } from "@/components/ui/auth-modal"
 
 export default function Home() {
-  const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false)
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
+  const [authModalView, setAuthModalView] = useState<"signIn" | "signUp">("signUp")
 
   return (
     <div className="flex min-h-screen flex-col bg-[#030303] text-white">
@@ -35,23 +37,13 @@ export default function Home() {
                 <Button
                   size="lg"
                   className="get-started-button bg-gradient-to-r from-green-500 to-sky-500 text-white border-none font-semibold"
-                  onClick={() => setIsRegistrationModalOpen(true)}
+                  onClick={() => {
+                    setAuthModalView("signUp")
+                    setIsAuthModalOpen(true)
+                  }}
                 >
                   <span className="relative z-10">Apply for Loan</span>
                   <ArrowRight className="ml-2 h-4 w-4 relative z-10" />
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="border-white/10 hover:border-white/20 text-white/80 hover:text-white relative overflow-hidden group"
-                >
-                  <Link href="#features">
-                    <span className="relative z-10">Learn More</span>
-                    <span className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </Link>
                 </Button>
               </motion.div>
             </div>
@@ -78,8 +70,8 @@ export default function Home() {
       </main>
       <Footer />
 
-      {/* Registration Modal */}
-      <RegistrationModal isOpen={isRegistrationModalOpen} onClose={() => setIsRegistrationModalOpen(false)} />
+      {/* Auth Modal */}
+      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} initialView={authModalView} />
     </div>
   )
 }

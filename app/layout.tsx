@@ -4,7 +4,6 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { AuthProvider } from "@/contexts/auth-context"
 import { Toaster } from "@/components/ui/toaster"
-import { FinaChatbot } from "@/components/ui/fina-chatbot"
 import { Suspense } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -26,7 +25,6 @@ export default function RootLayout({
         <Suspense fallback={<div>Loading...</div>}>
           <AuthProvider>
             {children}
-            <FinaChatbot />
             <Toaster />
           </AuthProvider>
         </Suspense>

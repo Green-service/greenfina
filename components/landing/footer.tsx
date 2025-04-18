@@ -39,27 +39,27 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Products</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/products/personal-loans" className="text-sm hover:text-green-500 transition-colors">
                   Personal Loans
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/products/student-loans" className="text-sm hover:text-green-500 transition-colors">
                   Student Loans
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/products/business-loans" className="text-sm hover:text-green-500 transition-colors">
                   Business Loans
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/products/stokvela-groups" className="text-sm hover:text-green-500 transition-colors">
                   Stokvela Groups
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/products/financial-advisory" className="text-sm hover:text-green-500 transition-colors">
                   Financial Advisory
                 </Link>
               </li>
@@ -69,27 +69,27 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/company/about" className="text-sm hover:text-green-500 transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/company/careers" className="text-sm hover:text-green-500 transition-colors">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/company/blog" className="text-sm hover:text-green-500 transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/company/press" className="text-sm hover:text-green-500 transition-colors">
                   Press
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/company/partners" className="text-sm hover:text-green-500 transition-colors">
                   Partners
                 </Link>
               </li>
@@ -99,27 +99,27 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Support</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/support/help-center" className="text-sm hover:text-green-500 transition-colors">
                   Help Center
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/support/contact" className="text-sm hover:text-green-500 transition-colors">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/support/privacy-policy" className="text-sm hover:text-green-500 transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/support/terms" className="text-sm hover:text-green-500 transition-colors">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm hover:text-green-500 transition-colors">
+                <Link href="/support/cookies" className="text-sm hover:text-green-500 transition-colors">
                   Cookie Policy
                 </Link>
               </li>

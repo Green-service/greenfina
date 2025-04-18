@@ -47,7 +47,19 @@ export function Navbar() {
             duration: 0.8,
           }}
         >
-          <div className="flex items-center justify-between gap-3 bg-sky-500/10 backdrop-blur-md py-1 px-3 md:px-4 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] border border-white/10">
+          <motion.div
+            className="flex items-center justify-between gap-3 bg-sky-500/10 backdrop-blur-md py-1 px-3 md:px-4 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] border border-white/10"
+            animate={{
+              y: [0, -5, 0, -3, 0],
+              rotate: [0, 0.5, 0, -0.5, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "mirror",
+              ease: "easeInOut",
+            }}
+          >
             <Link href="/" className="flex-shrink-0">
               {Logo}
             </Link>
@@ -129,7 +141,7 @@ export function Navbar() {
                 {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
               </Button>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 
@@ -177,4 +189,4 @@ export function Navbar() {
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} initialView={authModalView} />
     </>
   )
-}
+} 
