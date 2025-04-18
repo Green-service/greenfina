@@ -29,7 +29,12 @@ const profileSchema = z.object({
   dateOfBirth: z.string().optional(),
   employmentStatus: z.string().optional(),
   monthlyIncome: z.coerce.number().optional(),
-  profileImage: z.instanceof(FileList).optional(),
+  profileImage: z.any().refine((files) => {
+    if (typeof window === 'undefined') return true; // Skip validation during SSR
+    return !files || (files instanceof FileList && files.length >= 0);
+  }, {
+    message: "Invalid profile image",
+  }),
 })
 
 const employmentOptions = [

@@ -81,10 +81,16 @@ const loanSchema = z.object({
   purpose: z.string().min(10, {
     message: "Purpose must be at least 10 characters",
   }),
-  bankStatement: z.instanceof(FileList).refine((files) => files.length > 0, {
+  bankStatement: z.any().refine((files) => {
+    if (typeof window === 'undefined') return true; // Skip validation during SSR
+    return files instanceof FileList && files.length > 0;
+  }, {
     message: "Bank statement is required",
   }),
-  idDocument: z.instanceof(FileList).refine((files) => files.length > 0, {
+  idDocument: z.any().refine((files) => {
+    if (typeof window === 'undefined') return true; // Skip validation during SSR
+    return files instanceof FileList && files.length > 0;
+  }, {
     message: "ID document is required",
   }),
 })
